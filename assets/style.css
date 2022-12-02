@@ -1,8 +1,10 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 /*our root colors*/
 :root {
     --borders: #000;
+    --calendarBorders: #fff;
     --main-text: rgb(62, 44, 44);
     --light: rgb(192, 190, 190); 
 }
@@ -69,7 +71,7 @@ nav ul li {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    height: 300px;
+    height: auto;
     background-color: var(--light);
 }
 
@@ -92,4 +94,47 @@ nav ul li {
 
 .modal {
     z-index: 1000;
+}
+
+/*Styling for Calender page*/
+
+.calendar ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+}
+
+.calendar ul li {
+    width: calc(100% / 7)
+}
+
+.calendar .week li,
+.calendar .days li {
+    font-weight: bolder;
+    border: 1px solid var(--calendarBorders);
+}
+
+.calendar .days li {
+    height: auto;
+    min-height: 125px;
+    text-align: left;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.days li.active {
+    background-color: rgb(188, 199, 241);
+}
+
+.days li.inactive {
+    color: rgb(158, 158, 158);
+}
+
+.calendar .days li:hover {
+    background-color: rgb(147, 147, 147);
+}
+
+.current-date {
+    font-size: 25px;
 }
