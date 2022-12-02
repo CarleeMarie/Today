@@ -75,7 +75,7 @@ nav ul li {
 
 /*This is the styling for the footer/credits*/
 .footer {
-    z-index: 1000;
+    z-index: 100;
     display: block;
     margin-top: auto;
     padding: 20px;
@@ -88,4 +88,8 @@ nav ul li {
 /*Styling for the footer header*/
 .footer h3 {
     font-size: 20px; 
+}
+
+.modal {
+    z-index: 1000;
 }
