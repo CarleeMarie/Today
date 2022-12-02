@@ -1,0 +1,91 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+/*our root colors*/
+:root {
+    --borders: #000;
+    --main-text: rgb(62, 44, 44);
+    --light: rgb(192, 190, 190); 
+}
+
+/*universal selectors*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/*This is your body styling for font, color and background color*/
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px; 
+    font-family: 'Cascadia Code';
+    color: var(--main-text);
+    background-color: #304153;
+}
+/*This styles our header*/
+header {
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    flex-wrap: wrap;
+    background-color: var(--light);
+    border-bottom: 3px solid var(--borders);
+}
+/*This styles our header title*/
+header h1 {
+    display: inline-block;
+    font-size: 40px;
+}
+/*This places our header nav buttons*/
+.header nav {
+    margin-right: 20px;
+    float: right;
+    font-size: 20px;
+    color: var(--main-text)
+}
+/*This removes the bullet style from the nav*/
+.header nav ul {
+    list-style-type: none;
+}
+/*This gives our navbar links their color*/
+.header nav ul a {
+    text-decoration: none;
+    color: var(--main-text)
+}
+/*This adds a bit of spacing and keeps our navbar inline*/
+nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+    padding: 3px;
+}
+
+.one {
+    margin-top: 110px;
+}
+
+.box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 300px;
+    background-color: var(--light);
+}
+
+/*This is the styling for the footer/credits*/
+.footer {
+    z-index: 1000;
+    display: block;
+    margin-top: auto;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    color: var(--main-text);
+    background-color: var(--light);
+    border-top: 3px solid var(--borders);
+}
+/*Styling for the footer header*/
+.footer h3 {
+    font-size: 20px; 
+}
