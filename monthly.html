@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="icon" href="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f5d3.png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
   </head>
   <body>
     <!--This is where our navibar begins-->
@@ -26,6 +27,49 @@
         </nav>
     </header>
 
+    <div class="box one" id="calendar">
+      <!--This is our calendar title and controls-->
+      <div class="tabs is-fullwidth">
+        <ul class="date-controls">
+          <li>
+            <a id="previous">
+              <span class="icon"><i class="fas fa-angle-left" aria-hidden="true"></i></span>
+              <span>Left</span>
+            </a>
+          </li>
+          <li>
+            <p class="has-text-centered">
+              <span class="current-date"></span>
+            </p>
+          </li>
+          <li>
+            <a id="next">
+              <span>Right</span>
+              <span class="icon"><i class="fas fa-angle-right" aria-hidden="true"></i></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--End of calender title-->
+      
+      <div class="calendar">
+        <ul class="week">
+          <li>Sunday</li>
+          <li>Monday</li>
+          <li>Tuesday</li>
+          <li>Wednesday</li>
+          <li>Thursday</li>
+          <li>Friday</li>
+          <li>Saturday</li>
+        </ul>
+        <ul class="days">
+          <!--The day count gets added via javaScript-->
+        </ul>
+      </div> 
+
+
+    </div>
+
     <!--This is our footer/credits-->
     <footer class="footer">
           <h4>Made with ❤️️ <!--blood sweat and tears included--> by Group 8</h4>
@@ -44,6 +88,14 @@
       <button class="modal-close is-large" aria-label="close"></button>
     </div>
 
-    <script src="./javascript/modal.js"></script>
+    <!--Font awesome script-->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!--This links our jquery, day.js scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"></script>
+    <script src="./javascript/filtersModal.js"></script>
+    <script src="./javascript/monthly.js"></script>
   </body>
 </html>
