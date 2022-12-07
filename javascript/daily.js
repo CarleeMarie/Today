@@ -38,6 +38,14 @@ function renderDay () {
 
 renderDay();
 
+function saveEvent() {
+    var event = (".hour)
+    localStorage.setItem("hours[1]", entry());
+
+localStorage.setItem("event", )
+
+localStorage.getItem()
+
 // var currentTime = document.getElementById("#"
 
 // localStorage.getItem()
