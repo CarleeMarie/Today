@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Website Name!</title>
+    <title>Today Planner</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="icon" href="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f5d3.png"/>
@@ -12,17 +12,13 @@
   <body>
     <!--This is where our navibar begins-->
     <header class="header">
-        <h1>Website name</h1>
+        <h1>Today</h1>
         <nav>
             <ul class="navibar">
                 <!--Links for the navibar-->
                 <li><a href="./index.html" id="home">Home</a></li>
-                <li><a href="javascript:window.location.reload(true)" id="monthly">Monthly</a></li>
-                <li><a href="./daily.html" id="daily">Daily</a></li>
-                <li><a href="./weather.html" id="weather">Weather</a></li>
-                <li><a id="filters" class="js-modal-trigger" data-target="modal-js-example">
-                  Filters
-                </a></li>
+                <li><a href="javascript:window.location.reload(true)" id="monthly">Refresh</a></li>
+                <li><a id="filters" class="event-modal-trigger" data-target="modal-event">Add Event</a></li>
             </ul>
         </nav>
     </header>
@@ -50,6 +46,7 @@
           </li>
         </ul>
       </div>
+      <p class="has-text-centered is-size-3">Rendering events coming soon! :)</p>
       <!--End of calender title-->
       
       <div class="calendar">
@@ -66,80 +63,60 @@
           <!--The day count gets added via javaScript-->
         </ul>
       </div> 
+    </div>
 
+    
+    <!-- This is our add event modal -->
+    <div id="modal-event" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <div class="modal-card-head">
+          <p class="modal-card-title">Add Event</p>
+          <button class="delete" aria-label="close"></button>
+        </div>
+        <section class="modal-card-body">
+          <div class="field">
+            <label class="label">Event</label>
+            <div class="control">
+              <input id="event-name" class="event-name" type="text" placeholder="Event Name" autocomplete="off">
+            </div>
+          </div>
 
+          <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+              <input id="event-description" class="event-desc" type="text" placeholder="What is the event?" autocomplete="off">
+            </div>
+          </div>
+
+          <div class="field">
+          <label class="label">Date</label>
+          <input class="start-date"
+                 type="date" 
+                 id="start" 
+                 name="event-date"
+                 min="2022-12-01" max="2023-12-01">
+          </div>
+
+          <div class="field">
+            <label class="label">Event Time</label>
+            <input class="event-time"
+                   type="time" 
+                   id="time">
+          </div>         
+        </section>
+        <!--Events submit and cancel buttons-->
+        <div class="modal-card-foot field is-grouped is-grouped-centered">
+          <button id="save-event" class="button is-link">Save Event</button>
+          <button id="cancel-event" class="button is-link is-light">Cancel</button>
+        </div>
+      </div>
     </div>
 
     <!--This is our footer/credits-->
     <footer class="footer">
-          <h4>Made with ❤️️ <!--blood sweat and tears included--> by Group 8</h4>
+          <h2>Made with ❤️️ <!--blood sweat and tears included--> by Group 8</h2>
     </footer>
-
-    <div id="modal-js-example" class="modal">
-      <div class="modal-background"></div>
-    
-      <div class="modal-content">
-        <div class="box">
-          <h3 class="has-text-centered is-size-4">Filters</h3>
-          <!--Country select-->
-          <p>Select Country</p>
-          <div class="field">
-            <p class="control has-icons-left is-expanded">
-              <span class="select is-fullwidth">
-                <select>
-                  <option selected>Country</option>
-                  <option id="US">US</option>
-                  <option id="CA">Canada</option>
-                  <option id="CN">China</option>
-                  <option id="MX">Mexico</option>
-                </select>
-              </span>
-              <span class="icon is-small is-left">
-                <i class="fas fa-globe"></i>
-              </span>
-            </p>
-          </div>
-          <!--City input-->
-          <div class="field">
-            <label class="label">Enter City</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="e.g Chicago">
-            </div>
-          </div>
-
-          <!--Color theme Select-->
-          <p>Select Color Theme</p>
-          <div class="buttons field is-grouped is-grouped-centered">
-            <!--Need to change button is-class to new settings to set color themes-->
-            <button class="button is-info">Color</button>
-            <button class="button is-success">Color</button>
-            <button class="button is-warning">Color</button>
-            <button class="button is-danger">Color</button>
-          </div>
-          
-          <!--Filters submit and cancel buttons-->
-          <div class="field is-grouped is-grouped-centered">
-            <div class="control">
-              <button class="button is-link">Submit</button>
-            </div>
-            <div class="control">
-              <button class="button is-link is-light">Cancel</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <!-- This is our add event modal -->
-    <div id="modal-event" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <div class="box">
-          <h2>Hello</h2>
-        </div>
-      </div>
-    </div>
 
     <!--Font awesome script-->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -148,7 +125,8 @@
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
     crossorigin="anonymous"></script>
-    <script src="./javascript/filtersModal.js"></script>
+    <script src="./javascript/eventModal.js"></script>
+    <!-- <script src="./javascript/eventModal.js"></script> -->
     <script src="./javascript/monthly.js"></script>
   </body>
 </html>

@@ -31,7 +31,7 @@ function renderCalendar () {
     for (let i = 1; i <= lastDate; i++) {
         let isToday = i === date.getDate() && currentMonth === new Date().getMonth()
                     && currentYear === new Date().getFullYear() ? "active" : "";
-        listTag += `<li class="${isToday}"><button class="event-modal-trigger" data-target="modal-event">${i}</button></li>`;
+        listTag += `<li data-unique="${currentMonth+1}/${i}/${currentYear}" id="date" class="${isToday} li-date event-modal-trigger" data-target="modal-event"> ${i}</li>`;
     }
     
 //Creates next months first days to fill calendar 
@@ -48,7 +48,6 @@ renderCalendar();
 previousNextIcons.forEach(direction => {
     //This adds a click event to both our left and right icons
     direction.addEventListener("click", () => { 
-        console.log(direction);
         //When the previous icon is clicked it will go back a month, else it will increase by one
         currentMonth = direction.id === "previous" ? currentMonth - 1 : currentMonth + 1;
         //This allows our calendar to render months outside of the current year
@@ -62,15 +61,3 @@ previousNextIcons.forEach(direction => {
         renderCalendar();
     });
 });
-
-//=========Function pulls holiday API=========
-var currCountry = "US";
-$.getJSON(`https://holidays.abstractapi.com/v1/?api_key=${apiKey}&country=${currCountry}&year=2020&month=12&day=25`, function(data) {
-    console.log(data);
-})
-
-function renderHolidays( d ) {
-    var holidayName = d.name;
-    console.log(holidayName);
-}
-
