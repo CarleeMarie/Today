@@ -31,7 +31,7 @@ function renderCalendar () {
     for (let i = 1; i <= lastDate; i++) {
         let isToday = i === date.getDate() && currentMonth === new Date().getMonth()
                     && currentYear === new Date().getFullYear() ? "active" : "";
-        listTag += `<li class="${isToday}">${i}</li>`;
+        listTag += `<li class="${isToday}"><button class="event-modal-trigger" data-target="modal-event">${i}</button></li>`;
     }
     
 //Creates next months first days to fill calendar 

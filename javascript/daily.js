@@ -10,6 +10,9 @@
 
 //localStorage.setValue(key, value_you_want_stored)
 
+//First, user needs to be able to add an event using a modal
+var date = 
+
 function renderDay () {
     
     const today = new Date();
@@ -37,6 +40,14 @@ function renderDay () {
 }
 
 renderDay();
+
+// function saveEvent() {
+//     var event = (".hour)
+//     localStorage.setItem("hours[1]", entry());
+
+// localStorage.setItem("event", )
+
+// localStorage.getItem()
 
 // var currentTime = document.getElementById("#"
 
