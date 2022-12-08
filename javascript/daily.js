@@ -11,35 +11,8 @@
 //localStorage.setValue(key, value_you_want_stored)
 
 //First, user needs to be able to add an event using a modal
-var date = 
 
-function renderDay () {
-    
-    const today = new Date();
-    let currentHour = today.getHours();
-    console.log(today);
-    console.log(currentHour);
 
-    let listTag = "";
-
-    for (let i = firstDate; i > 0; i--) {
-        listTag += `<li class="inactive">${PreviousMonthLast - i + 1}</li>`;
-    }
-
-    for (let i = 1; i <= lastDate; i++) {
-        console.log(i);
-        listTag += `<li>${i}</li>`;
-    }
-
-    for (let i = NextMonthFirst; i < 6; i++) {
-        listTag += `<li class="inactive">${i - NextMonthFirst + 1}</li>`;
-    }
-
-    currentDate.innerHTML = `${months[currentMonth]} ${currentYear}` ;
-    daysCount.innerHTML = listTag;
-}
-
-renderDay();
 
 // function saveEvent() {
 //     var event = (".hour)

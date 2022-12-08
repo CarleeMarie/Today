@@ -58,8 +58,20 @@
       This is where the weather will go
     </div>
 
-    <div class="box" id="mainPlanner">
-      This is where the daily events will go
+    <div class="box" id="mainPlanner">  
+      <div class="currentDay">
+        <div class="hour" id="nine">9AM</div>
+        <textarea class="description"> </textarea>
+        
+        <div class="hour" id="ten">10AM</div>
+        <textarea class="description"> </textarea>
+        
+        <div class="hour" id="eleven">11AM</div>
+        <textarea class="description"> </textarea>
+        
+        <div class="hour" id="twelve">12PM</div>
+        <textarea class="description"> </textarea>
+      </div>
     </div>
 
     <!--This is our footer/credits-->
@@ -128,7 +140,28 @@
       <div class="modal-background"></div>
       <div class="modal-content">
         <div class="box">
-          <h2>Hello</h2>
+          <h2>Add Event</h2>
+          <div class="field">
+            <label class="label">Event</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Text input">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Text input">
+            </div>
+          </div>
+
+          <label for="event-date">Date</label>
+          <input type="date" id="start" name="trip-start"
+                 value="todays-date"
+                 min="2022-12-01" max="2023-12-01">
+          
+          
+
           <!--Events submit and cancel buttons-->
           <div class="field is-grouped is-grouped-centered">
             <div class="control">
