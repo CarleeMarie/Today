@@ -1,2 +1,3 @@
-# Group8
-Project 1
+# The TODAY App
+
+
