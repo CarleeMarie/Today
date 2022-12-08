@@ -29,18 +29,32 @@
     </header>
 
     <!--This is where our main section of the webpage begins-->
-    <div class="box one" id="quote">
-      <div class="text-center bg-dark">
-        <p class="is-size-3">    
-        </p>
-        <p id="today-date">
-          mm/dd/yy
-        </p>
-        <div id="quote">
-        </div>
-      </div>
-      
-    </div>
+    <div class="box one" id="quoteBox">
+     <div class="container">
+       <div class="text-center">
+         <p class="is-size-3 has-text-centered">Inspiration</p>
+         <p id="todays-date" class="is-size-6 has-text-centered">Day MM/DD/YY</p>
+         <hr class="my-4" />
+         <div id="quote"></div>
+         <p id="quote-warning"></p>
+         <div class="container mt-3 buttons is-centered">
+           <button
+             id="previous-button"
+             class="button is-info is-rounded is-small"
+             role="button">
+             Previous
+           </button>
+           <input id="count-number" type="hidden" />
+           <button
+             id="next-button"
+             class="button is-info is-rounded is-small"
+             role="button">
+             Next
+           </button>
+         </div>
+       </div>
+     </div>
+   </div>
 
     <div class="box" id="mainWeather">
       This is where the weather will go
