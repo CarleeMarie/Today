@@ -20,10 +20,8 @@
                 <li><a href="javascript:window.location.reload(true)" id="home">Home</a></li>
                 <li><a href="./monthly.html" id="monthly">Monthly</a></li>
                 <li><a href="./daily.html" id="daily">Daily</a></li>
-                <li><a href="./weather.html" id="weather">Weather</a></li>
-                <li><a id="filters" class="js-modal-trigger" data-target="modal-js-example">
-                  Filters
-                </a></li>
+                <li><a id="events" class="event-modal-trigger" data-target="modal-event">Add event</a></li>
+                <li><a id="filters" class="js-modal-trigger" data-target="modal-js-example">Filters</a></li>
             </ul>
         </nav>
     </header>
@@ -114,16 +112,34 @@
           <!--Filters submit and cancel buttons-->
           <div class="field is-grouped is-grouped-centered">
             <div class="control">
-              <button class="button is-link">Submit</button>
+              <button id="submit" class="button is-link">Submit</button>
             </div>
             <div class="control">
-              <button class="button is-link is-light">Cancel</button>
+              <button id="cancel" class="button is-link is-light">Cancel</button>
             </div>
           </div>
         </div>
       </div>
       
       <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <!-- This is our add event modal -->
+    <div id="modal-event" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+          <h2>Hello</h2>
+          <!--Events submit and cancel buttons-->
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control">
+              <button id="save-event" class="button is-link">Save</button>
+            </div>
+            <div class="control">
+              <button id="cancel-event" class="button is-link is-light">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!--Font awesome script-->
@@ -134,6 +150,7 @@
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
     crossorigin="anonymous"></script>
     <script src="./javascript/filtersModal.js"></script>
+    <script src="./javascript/eventModal.js"></script>
     <script src="./javascript/index.js"></script>
 
   </body>
