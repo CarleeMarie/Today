@@ -53,10 +53,56 @@
        </div>
      </div>
    </div>
-
+<!--Weather starts here-->
     <div class="box" id="mainWeather">
-      This is where the weather will go
-    </div>
+      <div class="box">
+        <form class="col-12">
+            <div class="form-group">
+            <label class="text-light" for="citySearch">City Search</label>
+            <input type="searchCity" class="form-control" id="citySearch" placeholder="City Name">
+            </div>
+            <button id="searchBtn" type="search" class="customButton">Search</button>
+            <button id="clearBtn" type="clear" class="customButton">Clear Search</button>
+        </form>
+  
+        <div class="card" style="width: 18rem; margin-left: auto; margin-right: auto; margin-top: 15px;">
+            <div class="card-header">
+              Recent Searches
+            </div>
+            <ul id="searchHistory" class="list-group list-group-flush scroll">
+              <li id="recentCity" class="list-group-item">Placeholder</li>
+              <!--Cities added once searched-->
+            </ul>
+          </div>
+    </aside>
+  
+    <main class="weather">
+        <div id="curentWeather" class="col-12">
+            <ul class="col customBanner">
+                <li id="locationIcon"><h1 id="location"></h1><div id="icon"><img id="wicon" alt="Weather icon"></div></li>
+                <li id="description"></li>
+                <li id="temp"></li>
+                <li id="wind"></li>
+                <li id="humidity"></li>
+              </div> 
+        </div>
+  
+      
+  
+        <div id="weekWeather" class="d-flex align-content-end flex-wrap">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+          integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+          crossorigin="anonymous"></script>
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+          
+      </body>
+        </div>
+    </main>
+  
+      <script src="javascript/weather.js"></script>    </div>
 
     <div class="box" id="mainPlanner">  
       <div class="currentDay">
