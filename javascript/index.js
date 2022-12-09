@@ -4,7 +4,6 @@ var currentDate = dayjs().format('dddd, MMMM D, YYYY ')
 
 //==========Declared varibles==========
 //Button varibles
-const searchButton = document.getElementById("search-button");
 const previousButton = document.getElementById("previous-button");
 const nextButton = document.getElementById("next-button");
 //Misc Varibles
