@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="./assets/weatherstyle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <!-- This adds our favicon to the webpage tab -->
     <link rel="icon" href="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f5d3.png"/>
   </head>
 
@@ -19,10 +20,9 @@
             <ul class="navibar">
                 <!--Links for the navibar-->
                 <li><a href="javascript:window.location.reload(true)" id="home">Home</a></li>
+                <!--Our calendar will be added to the main webpage when the coding is complete for it-->
                 <li><a href="./monthly.html" id="monthly">Monthly</a></li>
-                <li><a href="./daily.html" id="daily">Daily</a></li>
-                <li><a id="events" class="event-modal-trigger" data-target="modal-event">Add event</a></li>
-                <li><a id="filters" class="js-modal-trigger" data-target="modal-js-example">Filters</a></li>
+                <li><a id="filters" class="event-modal-trigger" data-target="modal-event">Add Event</a></li>
             </ul>
         </nav>
     </header>
@@ -32,9 +32,11 @@
      <div class="container">
        <div class="text-center">
          <p class="is-size-3 has-text-centered">Inspiration</p>
-         <p id="todays-date" class="is-size-6 has-text-centered">Day MM/DD/YY</p>
+         <!-- The current date is rendered via the index.js file -->
+         <p id="todays-date" class="is-size-6 has-text-centered"></p>
          <hr class="my-4" />
          <div id="quote"></div>
+         <!-- Quote warning will provide a pop up warning if the user tries to go out past the amount of quotes in the array -->
          <p id="quote-warning"></p>
          <div class="container mt-3 buttons is-centered">
            <button
@@ -59,159 +61,96 @@
       <div class="box">
         <form class="col-12">
             <div class="form-group">
+              <!-- This is our weather search section -->
             <label class="text-light" for="citySearch">City Search</label>
             <input type="searchCity" class="form-control" id="citySearch" placeholder="City Name">
             </div>
             <button id="searchBtn" type="search" class="customButton">Search</button>
             <button id="clearBtn" type="clear" class="customButton">Clear Search</button>
         </form>
-
-        </div>
-  
-    <main class="weather">
-        <div id="curentWeather" class="col-12">
-            <ul class="col customBanner">
-                <li id="locationIcon"><h1 id="location"></h1><div id="icon"><img id="wicon" alt="Weather icon"></div></li>
-                <li id="description"></li>
-                <li id="temp"></li>
-                <li id="wind"></li>
-                <li id="humidity"></li>
-              </div> 
-        </div>
-  
-      
-  
-        <div id="weekWeather" class="d-flex align-content-end flex-wrap">
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-          integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-          crossorigin="anonymous"></script>
-          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-          
-      </body>
-        </div>
-    </main>
-  
-      <script src="javascript/weather.js"></script>    </div>
-
-    <div class="box" id="mainPlanner">  
-      <div class="currentDay">
-        <div class="hour" id="nine">9AM</div>
-        <textarea class="description"> </textarea>
-        
-        <div class="hour" id="ten">10AM</div>
-        <textarea class="description"> </textarea>
-        
-        <div class="hour" id="eleven">11AM</div>
-        <textarea class="description"> </textarea>
-        
-        <div class="hour" id="twelve">12PM</div>
-        <textarea class="description"> </textarea>
       </div>
+  <!-- This is where our weather information is rendered -->
+      <div class="weather">
+          <div id="curentWeather" class="col-12">
+              <ul class="col customBanner">
+                  <li id="locationIcon"><h1 id="location"></h1><div id="icon"><img id="wicon" alt="Weather icon"></div></li>
+                  <li id="description"></li>
+                  <li id="temp"></li>
+                  <li id="wind"></li>
+                  <li id="humidity"></li>
+              </ul>
+          </div> 
+        </div>
     </div>
+<!-- This is our event planner section -->
+    <div class="box" id="mainPlanner">
+      <div class="is-size-3 has-text-centered">Upcoming Events</div>
+      <!-- This button section will allow the user to toggle between events for past, today, future and all -->
+      <!-- <div class="field is-grouped is-grouped-centered">
+        These buttons allow the user to toggle between past ,present and future events
+        <p class="control"><button id="past-event-button" class="button is-link">Past Events</button></p>
+        <p class="control"><button id="event-today-button" class="button is-link">Events Today</button></p>
+        <p class="control"><button id="future-event-button" class="button is-link">Future Events</button></p>
+        <p class="control"><button id="all-events-button" class="button is-link">All Events</button></p>
+      </div> -->
+      <div id="allEvents" class="upcoming-events">
+        <!-- Event list will be added via Javcascript -->
+      </div>
+      <!-- Clear local storage button -->
+      <a id="clearStorage" class="button is-info">Clear</a>
+    </div>
+
+ <!-- This is our add event modal -->
+ <div id="modal-event" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <div class="modal-card-head">
+      <p class="modal-card-title">Add Event</p>
+      <button class="delete" aria-label="close"></button>
+    </div>
+    <section class="modal-card-body">
+      <div class="field">
+        <label class="label">Event</label>
+        <div class="control">
+          <input id="event-name" class="eventInput" type="text" placeholder="Event Name" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Description</label>
+        <div class="control">
+          <input id="event-description" class="event-desc" type="text" placeholder="What is the event?" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="field">
+      <label class="label">Date</label>
+      <input class="start-date"
+             type="date" 
+             id="start" 
+             name="event-date"
+             min="01-01-2022" max="12-31-2025">
+      </div>
+
+      <div class="field">
+        <label class="label">Event Time</label>
+        <input class="event-time"
+               type="time" 
+               id="time">
+      </div>         
+    </section>
+    <!--Events submit and cancel buttons-->
+    <div class="modal-card-foot field is-grouped is-grouped-centered">
+      <button id="save-event" class="button is-link">Save Event</button>
+      <button id="cancel-event" class="button is-link is-light">Cancel</button>
+    </div>
+  </div>
+</div>
 
     <!--This is our footer/credits-->
     <footer class="footer">
           <h2>Made with ❤️️ <!--blood sweat and tears included--> by Group 8</h2>
     </footer>
-
-    <div id="modal-js-example" class="modal">
-      <div class="modal-background"></div>
-    
-      <div class="modal-content">
-        <div class="box">
-          <h3 class="has-text-centered is-size-4">Filters</h3>
-          <!--Country select-->
-          <p>Select Country</p>
-          <div class="field">
-            <p class="control has-icons-left is-expanded">
-              <span class="select is-fullwidth">
-                <select>
-                  <option selected>Country</option>
-                  <option id="US">US</option>
-                  <option id="CA">Canada</option>
-                  <option id="CN">China</option>
-                  <option id="MX">Mexico</option>
-                </select>
-              </span>
-              <span class="icon is-small is-left">
-                <i class="fas fa-globe"></i>
-              </span>
-            </p>
-          </div>
-          <!--City input-->
-          <div class="field">
-            <label class="label">Enter City</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="e.g Chicago">
-            </div>
-          </div>
-
-          <!--Color theme Select-->
-          <p>Select Color Theme</p>
-          <div class="buttons field is-grouped is-grouped-centered">
-            <!--Need to change button is-class to new settings to set color themes-->
-            <button class="button is-info">Color</button>
-            <button class="button is-success">Color</button>
-            <button class="button is-warning">Color</button>
-            <button class="button is-danger">Color</button>
-          </div>
-          
-          <!--Filters submit and cancel buttons-->
-          <div class="field is-grouped is-grouped-centered">
-            <div class="control">
-              <button id="submit" class="button is-link">Submit</button>
-            </div>
-            <div class="control">
-              <button id="cancel" class="button is-link is-light">Cancel</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <!-- This is our add event modal -->
-    <div id="modal-event" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <div class="box">
-          <h2>Add Event</h2>
-          <div class="field">
-            <label class="label">Event</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Text input">
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Description</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Text input">
-            </div>
-          </div>
-
-          <label for="event-date">Date</label>
-          <input type="date" id="start" name="trip-start"
-                 value="todays-date"
-                 min="2022-12-01" max="2023-12-01">
-          
-          
-
-          <!--Events submit and cancel buttons-->
-          <div class="field is-grouped is-grouped-centered">
-            <div class="control">
-              <button id="save-event" class="button is-link">Save</button>
-            </div>
-            <div class="control">
-              <button id="cancel-event" class="button is-link is-light">Cancel</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!--Font awesome script-->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -220,8 +159,8 @@
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
     crossorigin="anonymous"></script>
-    <script src="./javascript/filtersModal.js"></script>
     <script src="./javascript/eventModal.js"></script>
+    <script src="javascript/weather.js"></script>
     <script src="./javascript/index.js"></script>
 
   </body>

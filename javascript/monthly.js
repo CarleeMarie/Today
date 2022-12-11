@@ -31,7 +31,7 @@ function renderCalendar () {
     for (let i = 1; i <= lastDate; i++) {
         let isToday = i === date.getDate() && currentMonth === new Date().getMonth()
                     && currentYear === new Date().getFullYear() ? "active" : "";
-        listTag += `<li class="${isToday}"><button class="event-modal-trigger" data-target="modal-event">${i}</button></li>`;
+        listTag += `<li data-unique="${currentMonth+1}/${i}/${currentYear}" class="${isToday} li-date event-modal-trigger" data-target="modal-event"> ${i}</li>`;
     }
     
 //Creates next months first days to fill calendar 
@@ -63,14 +63,49 @@ previousNextIcons.forEach(direction => {
     });
 });
 
-//=========Function pulls holiday API=========
-var currCountry = "US";
-$.getJSON(`https://holidays.abstractapi.com/v1/?api_key=${apiKey}&country=${currCountry}&year=2020&month=12&day=25`, function(data) {
-    console.log(data);
-})
+//Render events to calendar 
+//Render function
+function renderEvents () {
+    var eventList = JSON.parse(localStorage.getItem("events"));
+    var eventListBox = document.getElementById('allEvents');
 
-function renderHolidays( d ) {
-    var holidayName = d.name;
-    console.log(holidayName);
-}
-
+    //Sort by date
+      function sortEvents () {
+        if(eventList == null){
+          return;
+        } else{
+          eventList.sort(function(a,b){
+            return new Date(a.date) - new Date(b.date);
+          })
+          return eventList;
+      }};
+  
+      var sortedEvents = sortEvents();
+      console.log(sortedEvents);
+  
+//     for (let i = 0; i < sortedEvents.length; i++) {
+//         var uniqueEvent = sortedEvents[i];
+//         var eventDate = dayjs(uniqueEvent.date);
+  
+//         var createEvent = document.createElement("li");
+//         createEvent.innerHTML = `<p id="event-title">${uniqueEvent.name}</p><p id=event-info>Date: ${eventDate.format('MM-DD-YYYY')} <br>Time: ${uniqueEvent.time} <br>Description: ${uniqueEvent.desc}</p>`;
+//         createEvent.setAttribute("data-date", uniqueEvent.date);
+//         eventListBox.appendChild(createEvent);
+//         createEvent.classList.add("event")
+//         createEvent.setAttribute("id", "created-event")
+        
+//   //Add class for past events
+//         var now = dayjs();
+//         var currentDate = now.format("MM-DD-YYYY");
+//         var dateForEvent = eventDate.format("MM-DD-YYYY");
+  
+//         if (dateForEvent < currentDate) {
+//           createEvent.classList.add('past-event');        
+//         } else if (dateForEvent === currentDate) {
+//           createEvent.classList.add('event-today');  
+//         } else {
+//           createEvent.classList.add('future-event');
+//         }
+//     }
+  }
+  renderEvents();

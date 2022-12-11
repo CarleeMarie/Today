@@ -63,11 +63,11 @@ nav ul li {
     margin-left: 25px;
     padding: 3px;
 }
-
+/*This ensures our content boxes are displayed below the nav bar*/
 .one {
     margin-top: 110px;
 }
-
+/*Styling for all content boxes*/
 .box {
     margin-left: auto;
     margin-right: auto;
@@ -75,7 +75,57 @@ nav ul li {
     height: auto;
     background-color: var(--light);
 }
-
+/*This gives our event list the max height and scrollbar so we don't have an endless webpage*/
+#allEvents {
+    max-height: 400px;
+    overflow-y: scroll;
+    margin: 5px;
+}
+/*This styles the individual events*/
+.event {
+    list-style: none;
+    color: rgb(219, 219, 219);
+    background-color: #375e88;
+    border: 3px solid var(--borders);
+    margin: 5px;
+}
+/*Makes our event tile larger in front*/
+#event-title {
+    font-size: 25px;
+}
+/*Indents and sets font size for our event information (date, time and description)*/
+#event-info {
+    font-size: 13px;
+    margin-left: 20px;
+}
+/*This colors events with today's date a teal color*/
+.event-today {
+    background-color: rgb(37, 122, 154);
+}
+.past-time {
+    color: #000;
+    background-color: rgb(111, 114, 115);
+}
+/*This makes future events green*/
+.future-event {
+    background-color: rgb(49, 113, 31);
+}
+/*This makes past events red*/
+.past-event {
+    background-color:rgb(134, 68, 68);
+}
+/*This hides past events unless user clicks past events button to view them*/
+.past-display {
+    display: none;
+}
+/*This hides events today based on button clicked*/
+.today-display {
+    display: none;
+}
+/*This hides future events based on button clicked*/
+.future-display {
+    display: none;
+}
 /*This is the styling for the footer/credits*/
 .footer {
     z-index: 100;
