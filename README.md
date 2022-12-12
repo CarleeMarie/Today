@@ -14,7 +14,8 @@ This wepage shows the beginner coding skills of Leslie Garcia, Benjamin Espino L
 3. Installation 
 4. Usage
 5. Credits 
-6. License 
+6. Screenshots
+7. License 
 
 ## Installation 
 To run this webpage you can access it through the URL links porvided within the GitHub repository found in the CSS-Focused_Webpage. There is an active link.
@@ -24,6 +25,10 @@ This wepage can be used for daily motivation, to check weather/daily events, and
 
 ## Credits 
 
+## Screenshots
+![alt text](/assets/Screenshots/quotes-and-weather.gif)
+![alt text](/assets/Screenshots/event-list.gif)
+![alt text](/assets/Screenshots/add-event.gif)
 
 ## License 
 MIT License
