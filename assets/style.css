@@ -180,6 +180,7 @@ nav ul li {
 
 .days li.inactive {
     color: rgb(158, 158, 158);
+    cursor: auto;
 }
 
 .calendar .days li:hover {
