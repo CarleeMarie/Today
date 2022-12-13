@@ -63,6 +63,12 @@ nav ul li {
     margin-left: 25px;
     padding: 3px;
 }
+
+/*This adds our hover effect on the navbar buttons*/
+nav ul li a:hover {
+    color: #306fb2;
+}
+
 /*This ensures our content boxes are displayed below the nav bar*/
 .one {
     margin-top: 110px;
