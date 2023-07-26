@@ -6,7 +6,7 @@
 Project 1
 
 ## Description 
-This wepage shows the beginner coding skills of Leslie Garcia, Benjamin Espino Lima, Carlee Miller, and Venus Rodin. Together, the wepage is interactive, has constructed CSS, has two server-side APIs, usese client side-storage to store persistent data, is responsive, and has a polished UI. On this webpage, a inspirational quote greets the user right away. Weather and daily events are displayed as well. 
+This webpage shows the beginner coding skills of Leslie Garcia, Benjamin Espino Lima, Carlee Miller, and Venus Rodin. The webpage is interactive, has constructed CSS, has two server-side APIs, uses client side-storage to store persistent data, is responsive, and has a polished UI. On this webpage, an inspirational quote greets the user right away. Weather and daily events are displayed as well. 
 
 ## Table of Contents
 1. Description
@@ -18,10 +18,10 @@ This wepage shows the beginner coding skills of Leslie Garcia, Benjamin Espino L
 7. License 
 
 ## Installation 
-To run this webpage you can access it through the URL links porvided within the GitHub repository found in the CSS-Focused_Webpage. There is an active link.
+To run this webpage you can access it through the URL links provided within the GitHub repository found in the CSS-Focused_Webpage. There is an active link.
 
 ## Usage 
-This wepage can be used for daily motivation, to check weather/daily events, and to view a personal calander. 
+This webpage can be used for daily motivation, to check weather/daily events, and to view a personal calendar. 
 
 ## Credits 
 
